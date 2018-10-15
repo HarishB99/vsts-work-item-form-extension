@@ -1,7 +1,7 @@
 {
     "manifestVersion": 1,
     "id": "harish-sample-extension-for-testing",
-    "version": "0.0.0.1",
+    "version": "0.0.0.4",
     "name": "Harish Sample Extension for Testing",
     "description": "A sample Visual Studio Services extension.",
     "publisher": "HarishB",
@@ -18,16 +18,40 @@
     ],
     "contributions": [
         {  
-            "id": "sample-work-item-form-group",
-            "type": "ms.vss-work-web.work-item-form-group",
-            "description": "Custom work item form group",
+            "id": "sample-work-item-form-control",
+            "type": "ms.vss-work-web.work-item-form-control",
+            "description": "Custom work item form control",
             "targets": [
                 "ms.vss-work-web.work-item-form"
             ],
             "properties": {
-                "name": "My Group",
+                "name": "My Control",
                 "uri": "hello-world.html",
-                "height": 600
+                "height": 600,
+                "inputs": [
+                    {
+                        "id": "FieldName",
+                        "name": "Sample Field Name",
+                        "description": "The field associated with the control.",
+                        "type": "WorkItemField",
+                        "properties": {
+                            "workItemFieldTypes": ["String"]
+                        },
+                        "validation": {
+                            "dataType": "String",
+                            "isRequired": true
+                        }
+                    },
+                    {
+                        "id": "Colors",
+                        "name": "Colors",
+                        "description": "The colors that match the values in the control.",
+                        "validation": {
+                            "dataType": "String",
+                            "isRequired": false
+                        }
+                    }
+                ]
             }
         }
     ],
