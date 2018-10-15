@@ -1,0 +1,44 @@
+{
+    "manifestVersion": 1,
+    "id": "harish-sample-extension-for-testing",
+    "version": "0.0.0.1",
+    "name": "Harish Sample Extension for Testing",
+    "description": "A sample Visual Studio Services extension.",
+    "publisher": "HarishB",
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],
+    "categories": [
+        "Boards"
+    ],
+    "scopes": [
+        "vso.work"
+    ],
+    "contributions": [
+        {  
+            "id": "sample-work-item-form-group",
+            "type": "ms.vss-work-web.work-item-form-group",
+            "description": "Custom work item form group",
+            "targets": [
+                "ms.vss-work-web.work-item-form"
+            ],
+            "properties": {
+                "name": "My Group",
+                "uri": "hello-world.html",
+                "height": 600
+            }
+        }
+    ],
+    "files": [
+        {
+            "path": "hello-world.html",
+            "addressable": true
+        },
+        {
+            "path": "node_modules/vss-web-extension-sdk/lib",
+            "addressable": true
+        }
+    ]
+}
